@@ -169,6 +169,7 @@
                                 "content" : { "Fn::Join" : ["", [
                                     "<?php\n",
                                     "echo '<h1>AWS CloudFormation sample PHP application</h1>';\n",
+                                    "echo '<p>Updated version via UpdateStack</p>';\n ",
                                     "?>\n"
                                 ]]},
                                 "mode"    : "000644",

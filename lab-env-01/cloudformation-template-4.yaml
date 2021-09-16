@@ -248,6 +248,8 @@ Resources:
                   - |
                     echo '<h1>AWS CloudFormation sample PHP application</h1>';
                   - |
+                    echo '<h1>Updated version via UpdateStack</h1>';
+                  - |
                     ?>
               mode: '000644'
               owner: apache
