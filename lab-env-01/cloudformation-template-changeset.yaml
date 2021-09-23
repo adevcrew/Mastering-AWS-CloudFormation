@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: A sample EC2 instance template for testing change sets.
+Parameters:
+  Purpose:
+    Type: String
+    Default: testing
+    AllowedValues:
+      - testing
+      - production
+    Description: The purpose of this instance.
+  KeyPairName:
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
+  InstanceType:
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.micro
+      - t2.small
+      - t2.medium
+    Description: The EC2 instance type.
+Resources:
+  MyEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      KeyName: !Ref KeyPairName
+      InstanceType: !Ref InstanceType
+      ImageId: ami-8fcee4e5
+      Tags:
+        - Key: Purpose
+          Value: !Ref Purpose
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 74aa3276-b7ac-4f1f-8140-14b3b42676f2
+Metadata:
+  'AWS::CloudFormation::Designer':
+    74aa3276-b7ac-4f1f-8140-14b3b42676f2:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 60
+        'y': 90
+      z: 1
+      embeds: []
